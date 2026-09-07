@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dharshini S | Biotechnology Portfolio</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Arial, sans-serif;
+background: #f5f7fb;
+color: #1f2937;
+line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+position: sticky;
+top: 0;
+z-index: 1000;
+background: white;
+padding: 15px 7%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #ddd;
+}
+
+.logo {
+font-size: 24px;
+font-weight: bold;
+color: #2563eb;
+}
+
+nav ul {
+list-style: none;
+display: flex;
+gap: 20px;
+}
+
+nav a {
+text-decoration: none;
+color: #333;
+font-weight: bold;
+}
+
+nav a:hover {
+color: #2563eb;
+}
+
+/* Sections */
+section {
+padding: 70px 7%;
+}
+
+.hero {
+min-height: 90vh;
+display: flex;
+align-items: center;
+background: linear-gradient(135deg, #eaf2ff, #ffffff);
+}
+
+.hero-content {
+max-width: 850px;
+}
+
+.tag {
+display: inline-block;
+background: #dbeafe;
+color: #1d4ed8;
+padding: 8px 15px;
+border-radius: 20px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+
+.hero h1 {
+font-size: 60px;
+line-height: 1.1;
+margin-bottom: 20px;
+}
+
+.hero h1 span {
+color: #2563eb;
+}
+
+.hero p {
+max-width: 700px;
+font-size: 18px;
+color: #555;
+}
+
+.buttons {
+margin-top: 30px;
+display: flex;
+gap: 15px;
+}
+
+.btn {
+display: inline-block;
+padding: 12px 22px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+border: none;
+cursor: pointer;
+}
+
+.primary {
+background: #2563eb;
+color: white;
+}
+
+.secondary {
+background: white;
+color: #2563eb;
+border: 2px solid #2563eb;
+}
+
+/* Section heading */
+.section-title {
+text-align: center;
+margin-bottom: 40px;
+}
+
+.section-title h2 {
+font-size: 35px;
+margin-bottom: 8px;
+}
+
+.section-title p {
+color: #666;
+}
+
+/* Cards */
+.card {
+background: white;
+padding: 25px;
+border-radius: 15px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+border: 1px solid #e5e7eb;
+}
+
+/* About */
+.about-grid {
+max-width: 1000px;
+margin: auto;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 25px;
+}
+
+.card h3 {
+margin-bottom: 12px;
+}
+
+/* Skills */
+.skills-box {
+max-width: 1000px;
+margin: auto;
+}
+
+.skills {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.skill {
+background: #eff6ff;
+color: #1d4ed8;
+padding: 8px 14px;
+border-radius: 20px;
+font-weight: bold;
+}
+
+/* Projects */
+.projects {
+max-width: 1100px;
+margin: auto;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 25px;
+}
+
+.project-number {
+width: 40px;
+height: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #2563eb;
+color: white;
+border-radius: 50%;
+font-weight: bold;
+margin-bottom: 15px;
+}
+
+/* Experience */
+.timeline {
+max-width: 800px;
+margin: auto;
+border-left: 3px solid #bfdbfe;
+padding-left: 25px;
+}
+
+.timeline-item {
+margin-bottom: 30px;
+position: relative;
+}
+
+.timeline-item::before {
+content: "";
+position: absolute;
+left: -34px;
+top: 5px;
+width: 15px;
+height: 15px;
+background: #2563eb;
+border-radius: 50%;
+}
+
+.timeline-item small {
+color: #2563eb;
+font-weight: bold;
+}
+
+/* AI section */
+.ai-box {
+max-width: 850px;
+margin: auto;
+text-align: center;
+}
+
+textarea,
+input {
+width: 100%;
+padding: 13px;
+margin: 8px 0;
+border: 1px solid #ccc;
+border-radius: 8px;
+font-family: Arial;
+font-size: 15px;
+}
+
+textarea {
+min-height: 130px;
+}
+
+#aiResult {
+display: none;
+background: #eff6ff;
+padding: 20px;
+margin-top: 15px;
+border-radius: 10px;
+text-align: left;
+}
+
+/* Contact */
+.contact-grid {
+max-width: 1000px;
+margin: auto;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 25px;
+}
+
+form {
+display: grid;
+gap: 10px;
+}
+
+form button {
+background: #2563eb;
+color: white;
+border: none;
+padding: 13px;
+border-radius: 8px;
+font-weight: bold;
+cursor: pointer;
+}
+
+#formMessage {
+display: none;
+color: green;
+font-weight: bold;
+}
+
+/* Footer */
+footer {
+background: #111827;
+color: white;
+text-align: center;
+padding: 25px;
+}
+
+/* Responsive design */
+@media (max-width: 750px) {
+
+nav {
+flex-direction: column;
+gap: 12px;
+}
+
+nav ul {
+flex-wrap: wrap;
+justify-content: center;
+gap: 12px;
+}
+
+.hero h1 {
+font-size: 42px;
+}
+
+.about-grid,
+.projects,
+.contact-grid {
+grid-template-columns: 1fr;
+}
+
+section {
+padding: 50px 5%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+<div class="logo">DS Portfolio</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+
+<!-- Home -->
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="tag">
+Biotechnology Student • Aspiring Biotechnologist
+</div>
+
+<h1>
+Hello, I'm <span>Dharshini</span>.
+</h1>
+
+<p>
+I am a biotechnology student interested in laboratory techniques,
+food technology, biotechnology applications and innovative
+problem-solving.
+</p>
+
+<div class="buttons">
+
+<a href="#projects" class="btn primary">
+View Projects
+</a>
+
+<a href="#contact" class="btn secondary">
+Contact Me
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- About -->
+<section id="about">
+
+<div class="section-title">
+
+<h2>About Me</h2>
+
+<p>A short introduction</p>
+
+</div>
+
+<div class="about-grid">
+
+<div class="card">
+
+<h3>Who I Am</h3>
+
+<p>
+I am a biotechnology student developing practical knowledge
+in molecular biology, microbiology, biochemistry and
+biotechnology-based applications.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>My Goal</h3>
+
+<p>
+My goal is to strengthen my technical and problem-solving
+abilities and apply biotechnology concepts to real-world
+challenges.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Skills -->
+<section id="skills">
+
+<div class="section-title">
+
+<h2>Skills</h2>
+
+<p>Technical and professional abilities</p>
+
+</div>
+
+
+<div class="card skills-box">
+
+<div class="skills">
+
+<span class="skill">Molecular Biology</span>
+
+<span class="skill">Microbiology</span>
+
+<span class="skill">Aseptic Techniques</span>
+
+<span class="skill">DNA Isolation</span>
+
+<span class="skill">Biochemistry</span>
+
+<span class="skill">Enzyme Assays</span>
+
+<span class="skill">Spectrophotometry</span>
+
+<span class="skill">Food Technology</span>
+
+<span class="skill">MS Word</span>
+
+<span class="skill">PowerPoint</span>
+
+<span class="skill">Excel</span>
+
+<span class="skill">HTML & CSS</span>
+
+<span class="skill">JavaScript Basics</span>
+
+<span class="skill">Teamwork</span>
+
+<span class="skill">Presentation</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Projects -->
+<section id="projects">
+
+<div class="section-title">
+
+<h2>Projects Showcase</h2>
+
+<p>Selected academic and innovation projects</p>
+
+</div>
+
+
+<div class="projects">
+
+<div class="card">
+
+<div class="project-number">01</div>
+
+<h3>Smart Bio-Functional Membrane System</h3>
+
+<p>
+A prototype concept for ammonia gas detection and filtration
+using a bio-functional membrane, gas sensor and
+microcontroller-based monitoring.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="project-number">02</div>
+
+<h3>Mycotoxin Protection for Grains</h3>
+
+<p>
+An innovation concept focused on reducing mycotoxin-related
+problems during grain storage and improving protection for
+small-scale industries.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="project-number">03</div>
+
+<h3>Biodegradable Food Packaging Study</h3>
+
+<p>
+A study exploring the transition from conventional packaging
+approaches toward biodegradable alternatives.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="project-number">04</div>
+
+<h3>AI-Based Rockfall Prediction</h3>
+
+<p>
+A technology-oriented idea combining artificial intelligence
+and prediction methods to improve safety in open-pit mining.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Experience -->
+<section id="experience">
+
+<div class="section-title">
+
+<h2>Experience & Learning</h2>
+
+<p>Academic exposure and practical training</p>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<small>INTERNSHIP</small>
+
+<h3>
+Pharmaceutical Manufacturing & Quality
+</h3>
+
+<p>
+Exposure to tablet manufacturing, packaging and
+basic QA/QC activities.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<small>PRESENTATION</small>
+
+<h3>
+Biotechnology & Food Technology
+</h3>
+
+<p>
+Participated in seminars, poster presentations
+and academic innovation activities.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<small>LEARNING</small>
+
+<h3>
+Web Development Fundamentals
+</h3>
+
+<p>
+Learning HTML, CSS and JavaScript to create
+responsive and interactive webpages.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- AI Assisted Activity -->
+<section id="ai">
+
+<div class="section-title">
+
+<h2>AI-Assisted Activity</h2>
+
+<p>
+Use an AI prompt to improve portfolio content
+</p>
+
+</div>
+
+
+<div class="card ai-box">
+
+<h3>AI Portfolio Helper</h3>
+
+<p>
+Enter a sentence about yourself and click the button.
+</p>
+
+
+<textarea
+id="aiInput"
+placeholder="Example: I am interested in biotechnology and food technology...">
+</textarea>
+
+
+<button
+class="btn primary"
+onclick="improveText()">
+
+Improve With AI
+
+</button>
+
+
+<div id="aiResult"></div>
+
+</div>
+
+</section>
+
+
+<!-- Contact -->
+<section id="contact">
+
+<div class="section-title">
+
+<h2>Contact Me</h2>
+
+<p>Let's connect</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+<div class="card">
+
+<h3>Get In Touch</h3>
+
+<p>Email: yourname@email.com</p>
+
+<p>
+LinkedIn:
+linkedin.com/in/yourprofile
+</p>
+
+<p>
+Location: Tamil Nadu, India
+</p>
+
+</div>
+
+
+<div class="card">
+
+<form id="contactForm">
+
+<input
+type="text"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+placeholder="Your Email"
+required>
+
+<textarea
+placeholder="Your Message"
+required>
+</textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+<p id="formMessage">
+Message submitted successfully!
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Footer -->
+<footer>
+
+<p>
+© 2026 Dharshini S | Personal Portfolio
+</p>
+
+</footer>
+
+
+<script>
+
+/* Contact form */
+document
+.getElementById("contactForm")
+.addEventListener("submit", function(event) {
+
+event.preventDefault();
+
+document
+.getElementById("formMessage")
+.style.display = "block";
+
+this.reset();
+
+});
+
+
+/* AI-assisted activity */
+function improveText() {
+
+const input =
+document
+.getElementById("aiInput")
+.value
+.trim();
+
+const result =
+document
+.getElementById("aiResult");
+
+
+if (input === "") {
+
+result.style.display = "block";
+
+result.innerHTML =
+"Please enter a sentence first.";
+
+return;
+}
+
+
+result.style.display = "block";
+
+
+result.innerHTML =
+"<strong>Improved version:</strong><br>" +
+
+"I am a motivated biotechnology student " +
+"with a strong interest in applying scientific " +
+"knowledge to practical challenges. " +
+
+input.charAt(0).toUpperCase() +
+input.slice(1);
+}
+
+</script>
+
+</body>
+</html>
